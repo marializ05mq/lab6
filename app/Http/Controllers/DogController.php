@@ -37,7 +37,7 @@ class DogController extends Controller
         $dog = Dog::find($id);
 
         if (!$dog) {
-            return response()->json(['error' => 'Perro no encontrado'], 404);
+            return response()->json(['error' => 'Perrito no encontrado'], 404);
         }
 
         return response()->json($dog);
@@ -56,13 +56,13 @@ class DogController extends Controller
         $dog = Dog::find($id);
 
         if (!$dog) {
-            return response()->json(['error' => 'Perro no encontrado'], 404);
+            return response()->json(['error' => 'Perrito no encontrado'], 404);
         }
 
         $dog->nombre = $request->input('nombre');
         $dog->save();
 
-        return response()->json(['message' => 'Perro actualizado', 'dog' => $dog]);
+        return response()->json(['message' => 'Perrito actualizado', 'dog' => $dog]);
     }
 
     public function destroy($id)
